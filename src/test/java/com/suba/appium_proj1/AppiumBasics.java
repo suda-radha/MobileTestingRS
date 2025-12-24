@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.testng.annotations.Test;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -50,6 +51,8 @@ public class AppiumBasics {
 		AndroidDriver driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
 		
 		//3. Run your tests
+		//Note: Locators supported by AppiumBy class -> id, className, xpath, accessibilityId, androidUIAutomator
+		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
 		
 		
 		//4. quit the AndroidDriver
